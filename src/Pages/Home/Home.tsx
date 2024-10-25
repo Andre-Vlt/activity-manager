@@ -1,14 +1,22 @@
 import React from "react";
 import { IActivity } from "../../Models/activity-model";
 import styled from "styled-components";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 interface ActivitiesListProps {
     activities: IActivity[];
-    // removeActivity: (id: number) => void;
+    removeActivity: (id: string) => void;
     completeActivity: (id: string) => void;
 }
 
+const StyledIcon = styled(FaRegTrashAlt)`
+color: #f10700;
+margin-left: 30px;
+cursor: pointer;
 
+&:hover {
+    color: #f8726d
+`;
 const Container = styled.div`
 display: flex;
 flex-direction: column;
@@ -84,7 +92,7 @@ const ActivityContainer = styled.div`
     align-items: flex-start;
     justify-content: center;
 `;
-const Home:React.FC<ActivitiesListProps> = ({ activities, completeActivity}) => {
+const Home:React.FC<ActivitiesListProps> = ({ activities, completeActivity, removeActivity}) => {
     return (
         <Container>
        <List>
@@ -103,6 +111,7 @@ const Home:React.FC<ActivitiesListProps> = ({ activities, completeActivity}) => 
                     <ActivityDescription>{activity.description}</ActivityDescription>
                     </ActivityContainer>
                 </ActivityInfo>
+                <StyledIcon onClick={() => removeActivity(activity.id)} />
             </ListItem>
         ))};
          </List>

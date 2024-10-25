@@ -8,7 +8,7 @@ const Nav = styled.nav`
 margin: 0;
 background-color: #272727;
 height: 100vh;
-width: 400px;
+width: 250px;
 display: flex;
 flex-direction: column;
 gap: 20px;

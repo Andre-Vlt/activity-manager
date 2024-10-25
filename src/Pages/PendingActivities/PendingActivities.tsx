@@ -25,7 +25,8 @@ export const List = styled.ul`
     list-style-type: number;
     padding: 0;
     color: #ddd96c;
-    font-size: 1.5rem;`;
+    font-size: 1.5rem;
+    width: 1000px;`;
 
 export const StyledActivity = styled.li`
     border: 1px solid #E7E247;

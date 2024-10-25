@@ -41,6 +41,11 @@ function App() {
       dispatch({ type: 'SET_ACTIVITIES', payload: response.data })
     });
 
+  const removeActivity = (id: string) => {
+    api.delete(`/activities/${id}`)
+    .catch(error => {console.error('Erro ao remover atividade', error)});
+  }
+
   const addActivity = (activity: any) => {
     api.post('/activities', activity)
     .catch(error => {console.error('Erro ao adicionar atividade', error)});}
@@ -70,7 +75,7 @@ function App() {
           <>
           <SectionTitle>Todas Atividades</SectionTitle>
           <ContentWrapper>
-          <Home activities={state.activities} completeActivity={completeActivity} />
+          <Home activities={state.activities} completeActivity={completeActivity} removeActivity={removeActivity} />
           </ContentWrapper>
           </>} 
           />

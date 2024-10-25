@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 
 
-const Container = styled.div`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,30 +15,30 @@ const Container = styled.div`
     `;
 
 
-const ActivityTitle = styled.span`
+export const ActivityTitle = styled.span`
     font-weight: bold;
     color: #ddd96c;
     font-size: 1.5rem;
     `;
 
-const List = styled.ul`
+export const List = styled.ul`
     list-style-type: number;
     padding: 0;
     color: #ddd96c;
     font-size: 1.5rem;`;
 
-const StyledActivity = styled.li`
+export const StyledActivity = styled.li`
     border: 1px solid #E7E247;
     margin-bottom: 1rem;
     margin-top: 1rem;
     padding: 5px;`;
 
-const ActivityDescription = styled.span`
+export const ActivityDescription = styled.span`
     font-size: 1.2rem;
     color: #d9d9d9;
     `;
 
-const ActivityContainer = styled.div`
+export const ActivityContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;

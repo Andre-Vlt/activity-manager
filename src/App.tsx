@@ -12,6 +12,7 @@ import CompletedActivities from './Pages/CompletedActivities/CompletedActivities
 import PendingActivities from './Pages/PendingActivities/PendingActivities';
 import styled from 'styled-components';
 
+
 const initialState = {
   activities: [] as IActivity[]}
 

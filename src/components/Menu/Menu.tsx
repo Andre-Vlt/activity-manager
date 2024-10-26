@@ -1,28 +1,65 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import actIcon from "../../assets/icons/ActivityIcon.png";
+import { IoHomeOutline } from "react-icons/io5";
+import { CiCirclePlus } from "react-icons/ci";
+import { CiClock1 } from "react-icons/ci";
+import { FaCheck } from "react-icons/fa";
+import logo from "../../assets/images/Logo.png";
 
 
 const Nav = styled.nav`
 margin: 0;
 background-color: #272727;
 height: 100vh;
-width: 250px;
+width: 300px;
 display: flex;
 flex-direction: column;
-gap: 20px;
-;
+
+@media (min-width: 1365) {
+    width: 250px;
+}
 `;
 
-const Icon = styled.img`
-height: 100px;
-width: 100px;`;
+const Logo = styled.img`
+width: 100%;
+height: 100%;
+margin: 0;
+
+@media (max-height: 768px) {`;
+
+const CheckIcon = styled(FaCheck)`
+color: #E7E247;
+padding-right: 10px;
+font-size: 2em;`;
+
+const ClockIcon = styled(CiClock1)`
+color: #E7E247;
+padding-right: 10px;
+font-size: 2.2em;`;
+
+const HomeIcon = styled(IoHomeOutline)`
+color: #E7E247;
+padding-right: 10px;
+font-size: 1.5em;`;
+
+const AddIcon = styled(CiCirclePlus)`
+color: #E7E247;
+padding-right: 10px;
+font-size: 2em;`;
 
 
 const Container = styled.div`
 display: flex;
-justify-content: center;`;
+justify-content: center;
+align-items: center;`;
+
+const ItensContainer = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+`;
 
 const Ul = styled.ul`
 list-style: none;
@@ -40,13 +77,14 @@ const StyledLink = styled(Link)`
 `;
 
 const Li = styled.li`
-padding: 40px;
+padding: 25px;
 border-bottom: 1px solid #373535;
 display: flex;
 justify-content: center;
 align-items: center;
 color: #E7E247;
 font-family: "Rakkas", serif;
+font-size: 1.5em;
 
 
 &:hover {
@@ -54,6 +92,10 @@ font-family: "Rakkas", serif;
     cursor: pointer;
     transition: 1s ease;
 }
+
+
+@media (max-height: 768px){
+    padding: 10px;}
 `;
 
 const MenuContainer = styled.div`
@@ -67,24 +109,44 @@ const Menu: React.FC = () => {
             
             <MenuContainer>
             <StyledLink to = "/">
-                <Li>Home</Li>
+                <Li>
+                    <ItensContainer>
+                        <HomeIcon />
+                        Home
+                    </ItensContainer>
+                </Li>
             </StyledLink>
             </MenuContainer>
             
             <StyledLink to = "/create-activity">
-                <Li>Inserir atividade</Li>
+                <Li>
+                    <ItensContainer>
+                        <AddIcon />
+                        Criar atividade
+                    </ItensContainer>
+                    </Li>
             </StyledLink>
             
             <StyledLink to = "/pendent">
-                <Li>Atividades pendentes</Li>
+                <Li>
+                    <ItensContainer>
+                        <ClockIcon />
+                        Pendentes
+                    </ItensContainer>
+                </Li>
             </StyledLink>
             
             <StyledLink to = "/completed">
-                <Li>Atividades concluídas</Li>
+                <Li>
+                    <ItensContainer>
+                        <CheckIcon />
+                        Concluídas
+                    </ItensContainer>
+                </Li>
             </StyledLink>
             </Ul>
             <Container>
-            <Icon src={actIcon} alt="Activity Icon" />
+                <Logo src={logo} alt="Logo" />
             </Container>
         </Nav>
 

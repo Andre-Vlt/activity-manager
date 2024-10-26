@@ -1,6 +1,7 @@
 import HeaderComponent from "../Header/Header";
 import styled from "styled-components";
 import Menu from "../Menu/Menu";
+import React from "react";
 
 
 
@@ -24,8 +25,11 @@ const Main = styled.div`
   overflow-y: hidden;`;
   
 
+interface LayoutProps {
+  children: React.ReactNode;
+}
 
-const Layout = ({ children }) => {
+const Layout:React.FC<LayoutProps> = ({ children }) => {
   return (
     <Container>
         <HeaderComponent></HeaderComponent>
